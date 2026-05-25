@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка точки</title>
+
+    <style>
+        body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background: lightblue;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+}
+
+#res {
+    margin-top: 20px;
+    font-size: 20px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Перевірка точки на області</h2>
+
+        <input type="text" id="x" placeholder="Введіть x">
+
+        <input type="text" id="y" placeholder="Введіть y">
+
+        <button id="btn">Перевірити</button>
+
+        <p id="res">Результат</p>
+
+    </div>
+
+    <script>
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", checkPoint);
+
+        function checkPoint() {
+
+            let x = parseInt(document.getElementById("x").value);
+
+            let y = parseInt(document.getElementById("y").value);
+
+            let result = document.getElementById("res");
+
+            let t = (x >= 0 && x <= 17) && (y >= 0 && y <= 10);
+
+            if (t) {
+
+                result.innerHTML = "✅ Точка належить заштрихованій області";
+                result.style.color = "green";
+
+            } else {
+
+                result.innerHTML = "❌ Точка не належить заштрихованій області";
+                result.style.color = "red";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

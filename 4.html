@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обчислення k та l</title>
+
+        <style>
+        body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background: lightblue;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+}
+
+#res {
+    margin-top: 20px;
+    font-size: 20px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Зміна значень k та l</h2>
+
+        <input type="text" id="k" placeholder="Введіть k">
+
+        <input type="text" id="l" placeholder="Введіть l">
+
+        <button id="btn">Обчислити</button>
+
+        <p id="res">Результат</p>
+
+    </div>
+
+    <script>
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", calculate);
+
+        function calculate() {
+
+            let k = parseInt(document.getElementById("k").value);
+            let l = parseInt(document.getElementById("l").value);
+
+            let result = document.getElementById("res");
+
+            if (k !== l) {
+
+                if (k < l) {
+                    k = l;
+
+                } else {
+                    l = k;
+                }
+
+            } else {
+
+                k = 0;
+                l = 0;
+            }
+
+            result.innerHTML = "k = " + k + " | l = " + l;
+
+            result.style.color = "#2563eb";
+        }
+
+    </script>
+
+</body>
+
+</html>

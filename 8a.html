@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка проміжків</title>
+
+        <style>
+        body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background: lightblue;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+}
+
+#res {
+    margin-top: 20px;
+    font-size: 20px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h2>Перевірка належності</h2>
+
+        <input type="text" id="a" placeholder="Введіть число a">
+
+        <button id="btn">Перевірити</button>
+
+        <p id="res">Результат з'явиться тут</p>
+
+    </div>
+
+    <script>
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", checkIntervals);
+
+        function checkIntervals() {
+
+            let a = Number(document.getElementById("a").value);
+
+            let resultBlock = document.getElementById("res");
+
+            let result = "";
+
+            // Перевірка [4;6]
+            if ((a >= 4) && (a <= 6)) {
+
+                result += "a належить [4;6]<br>";
+
+            } else {
+
+                result += "a не належить [4;6]<br>";
+            }
+
+            // Перевірка [-2;3]
+            if ((a >= -2) && (a <= 3)) {
+
+                result += "a належить [-2;3]<br>";
+
+            } else {
+
+                result += "a не належить [-2;3]<br>";
+            }
+
+            resultBlock.innerHTML = result;
+        }
+
+    </script>
+
+</body>
+
+</html>

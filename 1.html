@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Перевірка числа</title>
+
+    <style>
+        body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background: lightblue;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+}
+
+#res {
+    margin-top: 20px;
+    font-size: 20px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h2>Перевірка числа</h2>
+
+        <input type="text" id="a" placeholder="Введіть число">
+        <br>
+
+        <button id="btn">Перевірити</button>
+
+        <p id="res">Результат</p>
+    </div>
+
+    <script>
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", checkNumber);
+
+        function checkNumber() {
+
+            let input = document.getElementById("a");
+            let result = document.getElementById("res");
+
+            let number = parseInt(input.value);
+
+            if (number > 0) {
+                result.innerHTML = "Число є додатним";
+                result.style.color = "green";
+
+            } else if (number < 0) {
+                result.innerHTML = "Число є від'ємним";
+                result.style.color = "red";
+
+            } else {
+                result.innerHTML = "Число дорівнює нулю";
+                result.style.color = "gray";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

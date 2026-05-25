@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка x</title>
+
+    <style>
+        body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background: lightblue;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+}
+
+#res {
+    margin-top: 20px;
+    font-size: 20px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h2>Перевірка належності x</h2>
+
+        <input type="text" id="x" placeholder="Введіть x">
+
+        <button id="btn">Перевірити</button>
+
+        <p id="res">Результат</p>
+
+    </div>
+
+    <script>
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", checkX);
+
+        function checkX() {
+
+            let x = parseFloat(document.getElementById("x").value);
+
+            let result = document.getElementById("res");
+
+            if (
+                (x >= -5 && x <= -4) ||
+                (x > 0 && x <= 2) ||
+                (x >= 3.2 && x <= 7)
+            ) {
+
+                result.innerHTML = "x належить проміжку";
+                result.style.color = "green";
+
+            } else {
+
+                result.innerHTML = "x не належить проміжку";
+                result.style.color = "red";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

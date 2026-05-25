@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перевірка цегли</title>
+
+    <style>
+        body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background: lightblue;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+}
+
+#res {
+    margin-top: 20px;
+    font-size: 20px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>Перевірка проходження цегли</h1>
+
+        <input type="text" id="x" placeholder="Введіть x">
+
+        <input type="text" id="y" placeholder="Введіть y">
+
+        <input type="text" id="z" placeholder="Введіть z">
+
+        <input type="text" id="a" placeholder="Введіть сторону отвору a">
+
+        <button id="btn">Перевірити</button>
+
+        <p id="res">Результат</p>
+
+    </div>
+
+    <script>
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", checkBrick);
+
+        function checkBrick() {
+
+            let x = parseInt(document.getElementById("x").value);
+            let y = parseInt(document.getElementById("y").value);
+            let z = parseInt(document.getElementById("z").value);
+
+            let a = parseInt(document.getElementById("a").value);
+
+            let result = document.getElementById("res");
+
+            if (
+                (x <= a && y <= a) ||
+                (x <= a && z <= a) ||
+                (y <= a && z <= a)
+            ) {
+
+                result.innerHTML = "Цегла пройде через отвір";
+                result.style.color = "green";
+
+            } else {
+
+                result.innerHTML = "Цегла не пройде через отвір";
+                result.style.color = "red";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Перевірка числа</title>
+
+        <style>
+        body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+    background: lightblue;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background: blue;
+    color: white;
+    border: none;
+}
+
+#res {
+    margin-top: 20px;
+    font-size: 20px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>Перевірка умов</h1>
+
+        <input type="text" id="a" placeholder="Введіть число a">
+
+        <button id="btn">Перевірити</button>
+
+        <p id="res">Тут буде результат</p>
+
+    </div>
+
+    <script>
+
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", checkNumber);
+
+        function checkNumber() {
+
+            let a = Number(document.getElementById("a").value);
+
+            let resultBlock = document.getElementById("res");
+
+            let result = "";
+
+            // 7a
+            if ((a % 2 === 0) && (a % 3 === 0)) {
+
+                result += "a кратне 2 та 3<br>";
+
+            } else {
+
+                result += "❌ a не кратне 2 та 3<br>";
+            }
+
+            // 7b
+            if ((a % 2 === 0) && (a % 5 === 0)) {
+
+                result += "a кратне 2 і 5<br>";
+
+            } else {
+
+                result += "a не кратне 2 і 5<br>";
+            }
+
+            // 7c
+            if ((a <= 0) || (a >= 3)) {
+
+                result += "a не належить (0;3)<br>";
+
+            } else {
+
+                result += "a належить (0;3)<br>";
+            }
+
+            // 7d
+            if ((a >= -2) && (a <= 0)) {
+
+                result += "a належить [-2;0]<br>";
+
+            } else {
+
+                result += "a не належить [-2;0]<br>";
+            }
+
+            resultBlock.innerHTML = result;
+        }
+
+    </script>
+
+</body>
+
+</html>
